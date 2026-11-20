@@ -1,5 +1,5 @@
 import { Link, NavLink } from 'react-router-dom';
-import styles from './Header.module.scss';
+import style from './Header.module.scss';
 import cn from 'classnames';
 
 const NAV_ITEMS = [
@@ -11,23 +11,23 @@ const NAV_ITEMS = [
 
 export const Header = () => {
   const getNavLinkClass = ({ isActive }: { isActive: boolean }) =>
-    cn(styles.nav__link, { [styles['nav__link--active']]: isActive });
+    cn(style.nav__link, { [style['nav__link--active']]: isActive });
 
   const getIconLinkClass = ({ isActive }: { isActive: boolean }) =>
-    cn(styles.iconLink, { [styles['iconLink--active']]: isActive });
+    cn(style.iconLink, { [style['iconLink--active']]: isActive });
 
   return (
-    <header className={styles.header}>
-      <Link to="/" className={styles.logo}>
+    <header className={style.header}>
+      <Link to="/" className={style.logo}>
         <img
           src="/img/Logo.svg"
           alt="Nice Gadgets"
-          className={styles.logo__img}
+          className={style.logo__img}
         />
       </Link>
 
-      <nav className={styles.nav}>
-        <ul className={styles.nav__list}>
+      <nav className={style.nav}>
+        <ul className={style.nav__list}>
           {NAV_ITEMS.map(({ to, label }) => (
             <li key={to}>
               <NavLink to={to} end={to === '/'} className={getNavLinkClass}>
@@ -38,7 +38,7 @@ export const Header = () => {
         </ul>
       </nav>
 
-      <div className={styles.actions}>
+      <div className={style.actions}>
         <NavLink
           to="/favorites"
           className={getIconLinkClass}
@@ -47,14 +47,14 @@ export const Header = () => {
           <img
             src="/img/Favorites(Empty).png"
             alt="Favorites"
-            className={styles.iconLink__img}
+            className={style.iconLink__img}
           />
         </NavLink>
         <NavLink to="/cart" className={getIconLinkClass} aria-label="Cart">
           <img
             src="/img/Cart(Empty).png"
             alt="Cart"
-            className={styles.iconLink__img}
+            className={style.iconLink__img}
           />
         </NavLink>
       </div>
