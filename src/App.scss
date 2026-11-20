@@ -1,1 +1,16 @@
-// not empty
+@use './styles/utils/fonts.scss';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Mont, sans-serif;
+  font-size: $bt-font-size;
+  font-weight: $bt-font-weight;
+  line-height: $bt-line-height;
+  color: $primary-color;
+  background-color: $background-color;
+}

@@ -1,7 +1,25 @@
 import './App.scss';
+import 'the-new-css-reset/css/reset.css';
+import { Route, Routes } from 'react-router-dom';
+import { HomePage } from './pages/HomePage';
+import { Layout } from './components/Layout';
+import { CatalogPage } from './pages/CatalogPage';
+import { ItemCardPage } from './pages/ItemCardPage';
+import { CartPage } from './pages/CartPage';
+import { FavoritesPage } from './pages/FavoritesPage';
+import { NotFoundPage } from './pages/NotFoundPage';
 
 export const App = () => (
-  <div className="App">
-    <h1>Product Catalog</h1>
-  </div>
+  <Routes>
+    <Route element={<Layout />}>
+      <Route index element={<HomePage />} />
+      <Route path="phones" element={<CatalogPage type="phones" />} />
+      <Route path="tablets" element={<CatalogPage type="tablets" />} />
+      <Route path="accessories" element={<CatalogPage type="accessories" />} />
+      <Route path="product/:productId" element={<ItemCardPage />} />
+      <Route path="cart" element={<CartPage />} />
+      <Route path="favorites" element={<FavoritesPage />} />
+      <Route path="*" element={<NotFoundPage />} />
+    </Route>
+  </Routes>
 );

@@ -1,0 +1,105 @@
+.header {
+  display: flex;
+  align-items: stretch;
+  height: 64px;
+  width: auto;
+  position: sticky;
+  border-bottom: 1px solid #E2E6E9;
+
+  @include on-tablet {
+    height: 48px;
+  }
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  padding: 18px 24px;
+  flex-shrink: 0;
+
+  &__img {
+    display: block;
+    height: 28px;
+    width: auto;
+
+    @include on-tablet {
+      height: 22px;
+      width: auto;
+    }
+  }
+
+  @include on-tablet {
+    padding: 13px 16px;
+  }
+}
+
+.nav {
+  display: flex;
+  align-self: stretch;
+  margin-left: 24px;
+
+  &__list {
+    display: flex;
+    align-items: stretch;
+    gap: 64px;
+
+    @include on-tablet {
+      gap: 32px;
+    }
+  }
+
+  &__link {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    font-size: 12px;
+    line-height: 11px;
+    letter-spacing: 4%;
+    color: $primary-color;
+    font-weight: 700;
+
+    &--active {
+      border-bottom: 1px solid $primary-color;
+    }
+  }
+
+  @include on-tablet {
+    margin-left: 16px;
+  }
+}
+
+.actions {
+  display: flex;
+  align-items: stretch;
+  margin-left: auto;
+  border-left: 1px solid #E2E6E9;
+  flex-shrink: 0;
+}
+
+.iconLink {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-right: 1px solid #E2E6E9;
+  padding: 24px;
+
+  &:last-child {
+    border-right: none;
+  }
+
+  &__img {
+    display: block;
+    width: 16px;
+    height: 16px;
+  }
+
+  &--active {
+    border-bottom: 1px solid $primary-color;
+  }
+
+  @include on-tablet {
+    padding: 16px;
+  }
+}
