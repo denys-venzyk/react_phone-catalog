@@ -1,5 +1,5 @@
 .footer {
-  border-top: 1px solid #E2E6E9;
+  border-top: 1px solid $elements-color;
 }
 
 .container {
@@ -24,6 +24,7 @@
     font-weight: $uc-font-weight;
     letter-spacing: $uc-letter-spacing;
     color: $secondary-color;
+
     @include hover(color, $primary-color)
   }
 }
@@ -39,6 +40,7 @@
   line-height: $st-line-height;
   letter-spacing: $st-letter-spacing;
   color: $secondary-color;
+  transition: $transition-base-behavior $transition-base-duration;
 
   &__arrow {
     display: flex;
@@ -47,13 +49,17 @@
     width: 32px;
     height: 32px;
     border: 1px solid $icons-color;
-    transition: border-color 0.3s;
+    transition: border-color $transition-base-duration;
   }
 
   &__img {
     display: block;
     width: 16px;
     height: 16px;
+  }
+
+  &:hover {
+    color: $primary-color;
   }
 
   &:hover &__arrow {

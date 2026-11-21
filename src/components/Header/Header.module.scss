@@ -61,7 +61,8 @@
     letter-spacing: $uc-letter-spacing;
     font-weight: $uc-font-weight;
     color: $secondary-color;
-    transition: color 0.3s;
+    transition: $transition-base-behavior $transition-base-duration;
+
     @include hover-undeline;
   }
 
@@ -85,6 +86,7 @@
   justify-content: center;
   border-right: 1px solid $elements-color;
   padding: 24px;
+
   @include hover-undeline;
 
   &:last-child {
