@@ -4,7 +4,7 @@
   height: 64px;
   width: auto;
   position: sticky;
-  border-bottom: 1px solid #E2E6E9;
+  border-bottom: 1px solid $elements-color;
   top: 0;
   background-color: $background-color;
   z-index: 0;
@@ -56,11 +56,11 @@
     display: flex;
     align-items: center;
     height: 100%;
-    font-size: 12px;
-    line-height: 11px;
-    letter-spacing: 0.04em;
+    font-size: $uc-font-size;
+    line-height: $uc-line-height;
+    letter-spacing: $uc-letter-spacing;
+    font-weight: $uc-font-weight;
     color: $secondary-color;
-    font-weight: 700;
     transition: color 0.3s;
 
     &::after {
@@ -104,7 +104,7 @@
   display: flex;
   align-items: stretch;
   margin-left: auto;
-  border-left: 1px solid #E2E6E9;
+  border-left: 1px solid $elements-color;
   flex-shrink: 0;
 }
 
@@ -113,7 +113,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border-right: 1px solid #E2E6E9;
+  border-right: 1px solid $elements-color;
   padding: 24px;
 
   &::after {

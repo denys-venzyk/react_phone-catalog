@@ -18,30 +18,40 @@ export const Footer = () => {
 
   return (
     <footer className={style.footer}>
-      <Link to="/" className={style.logo}>
-        <img
-          src="/img/Logo.svg"
-          alt="Nice Gadets"
-          className={style.logo__img}
-        />
-      </Link>
+      <div className={style.container}>
+        <Link to="/" className={style.logo}>
+          <img
+            src="/img/Logo.svg"
+            alt="Nice Gadets"
+            className={style.logo__img}
+          />
+        </Link>
 
-      <ul className={style.list}>
-        {FOOTER_LINKS.map(({ link, label }) => (
-          <li key={link}>
-            <a href={link} className={style.list__link}>
-              {label}
-            </a>
-          </li>
-        ))}
-      </ul>
+        <ul className={style.list}>
+          {FOOTER_LINKS.map(({ link, label }) => (
+            <li key={link}>
+              <a href={link} className={style.list__link}>
+                {label}
+              </a>
+            </li>
+          ))}
+        </ul>
 
-      <button type="button" onClick={handleBackToTop}>
-        <span>Back to top</span>
-        <span>
-          <img src="/img/Stroke(vertical).png" alt="" />
-        </span>
-      </button>
+        <button
+          type="button"
+          onClick={handleBackToTop}
+          className={style.backToTop}
+        >
+          <span className={style.backToTop__text}>Back to top</span>
+          <span className={style.backToTop__arrow}>
+            <img
+              src="/img/ArrowUp.png"
+              alt=""
+              className={style.backToTop__img}
+            />
+          </span>
+        </button>
+      </div>
     </footer>
   );
 };
