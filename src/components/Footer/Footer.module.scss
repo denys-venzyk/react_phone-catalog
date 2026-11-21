@@ -23,13 +23,8 @@
     font-size: $uc-font-size;
     font-weight: $uc-font-weight;
     letter-spacing: $uc-letter-spacing;
-    line-height: $uc-line-height;
     color: $secondary-color;
-    transition: color 0.3s;
-
-    &:hover {
-      color: $primary-color;
-    }
+    @include hover(color, $primary-color)
   }
 }
 

@@ -62,37 +62,7 @@
     font-weight: $uc-font-weight;
     color: $secondary-color;
     transition: color 0.3s;
-
-    &::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 3px;
-      background-color: $primary-color;
-      transform: scaleX(0);
-      transform-origin: center;
-      transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-    }
-
-    &:not(&--active):hover {
-      color: $primary-color;
-
-      &::after {
-        transform: scaleX(1);
-      }
-    }
-
-    &--active {
-      color: $primary-color;
-      transition: none;
-
-      &::after {
-        transform: scaleX(1);
-        transition: none;
-      }
-    }
+    @include hover-undeline;
   }
 
   @include on-tablet {
@@ -115,38 +85,10 @@
   justify-content: center;
   border-right: 1px solid $elements-color;
   padding: 24px;
-
-  &::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      width: 75%;
-      height: 3px;
-      background-color: $primary-color;
-      transform: scaleX(0);
-      transform-origin: center;
-      transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-    }
+  @include hover-undeline;
 
   &:last-child {
     border-right: none;
-  }
-
-  &:not(&--active):hover {
-    color: $primary-color;
-
-    &::after {
-      transform: scaleX(1);
-    }
-  }
-
-  &--active {
-    transition: none;
-
-    &::after {
-      transform: scaleX(1);
-      transition: none;
-    }
   }
 
   &__img {

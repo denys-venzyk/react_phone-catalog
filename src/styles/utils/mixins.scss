@@ -9,3 +9,44 @@
     @content;
   }
 }
+
+@mixin hover($propety, $toValue) {
+  transition: #{$propety} 0.3s;
+
+  &:hover {
+    #{$propety}: $toValue;
+  }
+}
+
+@mixin hover-undeline($color: $primary-color, $height: 3px) {
+  &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: $height;
+      background-color: $color;
+      transform: scaleX(0);
+      transform-origin: center;
+      transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+
+    &:not(&--active):hover {
+      color: $color;
+
+      &::after {
+        transform: scaleX(1);
+      }
+    }
+
+    &--active {
+      color: $color;
+      transition: none;
+
+      &::after {
+        transform: scaleX(1);
+        transition: none;
+      }
+    }
+}
