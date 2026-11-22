@@ -1,0 +1,68 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  padding-top: 80px;
+
+  &__title {
+    font-size: $h2-font-size;
+    font-weight: $h2-font-weight;
+    line-height: $h2-line-height;
+    letter-spacing: $h2-letter-spacing;
+    color: $primary-color;
+  }
+}
+
+.actions {
+  display: flex;
+  gap: 16px;
+
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background-color: transparent;
+    border: 1px solid $icons-color;
+    cursor: pointer;
+    transition: border-color 0.3s;
+
+    &:disabled {
+      border-color: $elements-color;
+      cursor: not-allowed;
+      opacity: 0.5;
+    }
+
+    &:hover:not(:disabled) {
+      border-color: $primary-color;
+    }
+  }
+
+  &__arrow {
+    display: block;
+    width: 16px;
+    height: 16px;
+
+    &--left {
+      transform: rotate(-90deg);
+    }
+
+    &--right {
+      transform: rotate(90deg);
+    }
+  }
+}
+
+.slider {
+  width: 100%;
+  overflow: hidden;
+  padding-bottom: 80px;
+}
+
+.container {
+  display: flex;
+  gap: 16px;
+  transition: transform 0.7s cubic-bezier(.32,-0.01,.45,.99);
+}

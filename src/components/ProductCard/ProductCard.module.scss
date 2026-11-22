@@ -1,13 +1,10 @@
-@use '../../styles/utils/globalColors.scss' as *;
-@use '../../styles/utils/globalTextStyles.scss' as *;
-@use '../../styles/utils/mixins.scss' as *;
-
 .card {
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
-  width: 100%;
+  width: 272px;
   max-width: 272px;
+  flex-shrink: 0;
   padding: 32px;
   background-color: $white-color;
   border: 1px solid $elements-color;
@@ -24,7 +21,6 @@
   justify-content: center;
   height: 196px;
   margin-bottom: 24px;
-  overflow: hidden;
 }
 
 .image {
@@ -118,8 +114,10 @@
 }
 
 .addButton {
+  text-align: center;
   flex: 1;
   height: 40px;
+  justify-items: center;
   font-size: $btn-font-size;
   font-weight: $btn-font-weight;
   line-height: $btn-line-height;

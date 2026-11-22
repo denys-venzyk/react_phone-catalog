@@ -12,6 +12,7 @@ export default defineConfig({
           @use "src/styles/utils/globalTextStyles.scss" as *;
           @use "src/styles/utils/globalVariables.scss" as *;
           @use "src/styles/utils/mixins.scss" as *;
+          @use "src/styles/utils/utilStyles" as *;
         `,
       },
     },

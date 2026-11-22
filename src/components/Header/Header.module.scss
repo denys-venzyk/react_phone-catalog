@@ -3,11 +3,8 @@
   align-items: stretch;
   height: 64px;
   width: auto;
-  position: sticky;
   border-bottom: 1px solid $elements-color;
-  top: 0;
   background-color: $background-color;
-  z-index: 0;
 
   @include on-tablet {
     height: 48px;

@@ -1,0 +1,91 @@
+@use '../../styles/utils/globalColors.scss' as *;
+@use '../../styles/utils/globalTextStyles.scss' as *;
+
+.title {
+  margin-bottom: 24px;
+  font-size: $h2-font-size;
+  font-weight: $h2-font-weight;
+  line-height: $h2-line-height;
+  letter-spacing: $h2-letter-spacing;
+  color: $primary-color;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+
+  &__img {
+    position: absolute;
+    max-width: none;
+    pointer-events: none;
+    transition: transform 0.3s ease;
+
+    &--phones {
+      top: 11%;
+      left: 13%;
+      width: 105%;
+      height: 124%;
+      object-fit: cover;
+      object-position: top left;
+    }
+
+    &--tablets {
+      top: 5%;
+      left: 6%;
+      width: 148%;
+      height: 148%;
+      object-fit: contain;
+      object-position: top left;
+    }
+
+    &--accessories {
+      top: 18%;
+      left: 16%;
+      width: auto;
+      height: 120%;
+      object-fit: contain;
+      object-position: top left;
+    }
+  }
+
+  &__link {
+    position: relative;
+    display: flex;
+    aspect-ratio: 1 / 1;
+    margin-bottom: 24px;
+    overflow: hidden;
+
+    &:hover .card__img {
+      transform: scale(1.08);
+    }
+  }
+
+  &__title {
+    margin-bottom: 4px;
+    font-size: $h4-font-size;
+    font-weight: $h4-font-weight;
+    line-height: $h4-line-height;
+    letter-spacing: $h4-letter-spacing;
+    color: $primary-color;
+    text-decoration: none;
+    transition: color 0.3s;
+
+    &:hover {
+      color: $secondary-color;
+    }
+  }
+
+  &__amount {
+    font-size: $st-font-size;
+    font-weight: $st-font-weight;
+    line-height: $st-line-height;
+    letter-spacing: $st-letter-spacing;
+    color: $secondary-color;
+  }
+}
