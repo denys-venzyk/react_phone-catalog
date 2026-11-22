@@ -10,7 +10,7 @@ export default defineConfig({
         additionalData: `
           @use "src/styles/utils/globalColors.scss" as *;
           @use "src/styles/utils/globalTextStyles.scss" as *;
-          @use "src/styles/utils/globalVariables.scss as *;"
+          @use "src/styles/utils/globalVariables.scss" as *;
           @use "src/styles/utils/mixins.scss" as *;
         `,
       },

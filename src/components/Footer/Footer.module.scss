@@ -9,10 +9,20 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 32px;
+  @include on-mobile {
+    grid-auto-rows: auto;
+    grid-template-columns: 1fr;
+    row-gap: 32px;
+    padding: 32px 16px;
+  }
 }
 
 .logo {
   justify-self: start;
+
+  @include on-mobile {
+    justify-self: start;
+  }
 }
 
 .list {
@@ -26,6 +36,12 @@
     color: $secondary-color;
 
     @include hover(color, $primary-color)
+  }
+
+  @include on-mobile {
+    flex-direction: column;
+    align-items: start;
+    gap: 16px;
   }
 }
 
@@ -41,6 +57,10 @@
   letter-spacing: $st-letter-spacing;
   color: $secondary-color;
   transition: $transition-base-behavior $transition-base-duration;
+
+  @include on-mobile {
+    justify-self: center;
+  }
 
   &__arrow {
     display: flex;

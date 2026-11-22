@@ -1,14 +1,15 @@
+@use 'globalVariables.scss' as *;
 @use './globalColors.scss' as *;
 @use './globalTextStyles.scss' as *;
 
 @mixin on-tablet {
-  @media (max-width: 1199px) {
+  @media (max-width: 1200px) {
     @content;
   }
 }
 
 @mixin on-mobile {
-  @media (max-width: 639px) {
+  @media (max-width: 640px) {
     @content;
   }
 }
@@ -32,7 +33,7 @@
       background-color: $color;
       transform: scaleX(0);
       transform-origin: center;
-      transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+      transition: transform $transition-base-duration cubic-bezier(0.25, 0.8, 0.25, 1);
     }
 
     &:not(&--active):hover {
