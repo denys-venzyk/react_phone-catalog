@@ -54,3 +54,35 @@
       }
     }
 }
+
+@mixin page-grid {
+  --columns: 24;
+
+  display: grid;
+  grid-template-columns: repeat(var(--columns), 1fr);
+  column-gap: 16px;
+
+  @include on-tablet {
+    --columns: 12;
+  }
+
+  @include on-mobile {
+    --columns: 4;
+  }
+}
+
+@mixin page-container {
+  --padding: 32px;
+
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-inline: var(--padding);
+
+  @include on-tablet {
+    --padding: 24px;
+  }
+
+  @include on-mobile {
+    --padding: 16px;
+  }
+}

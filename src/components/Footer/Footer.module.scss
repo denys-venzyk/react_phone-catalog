@@ -6,9 +6,10 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 32px;
+  padding: 32px 0;
+
+  @include page-container;
+
   @include on-mobile {
     grid-auto-rows: auto;
     grid-template-columns: 1fr;
