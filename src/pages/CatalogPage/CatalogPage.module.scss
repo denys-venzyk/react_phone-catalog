@@ -1,0 +1,28 @@
+.catalog {
+  @include page-container;
+  padding-top: 24px;
+  padding-bottom: 80px;
+
+  &__titles {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding-bottom: 40px;
+  }
+
+  &__title {
+    font-size: $h1-font-size;
+    font-weight: $h1-font-weight;
+    line-height: $h1-line-height;
+    letter-spacing: $h1-letter-spacing;
+    color: $primary-color;
+  }
+
+  &__models {
+    font-size: $bt-font-size;
+    font-weight: $bt-font-weight;
+    line-height: $bt-line-height;
+    letter-spacing: $bt-letter-spacing;
+    color: $secondary-color;
+  }
+}

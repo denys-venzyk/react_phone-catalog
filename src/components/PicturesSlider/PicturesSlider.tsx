@@ -41,7 +41,6 @@ export const PicturesSlider = () => {
           className={`${style.slider__button} ${style['slider__button--prev']}`}
           type="button"
           onClick={handlePrev}
-          disabled={activeIndex === 0}
         >
           <img
             src={ARROW_IMG_URL}
@@ -75,7 +74,6 @@ export const PicturesSlider = () => {
           className={`${style.slider__button} ${style['slider__button--next']}`}
           type="button"
           onClick={handleNext}
-          disabled={activeIndex === BANNERS_DATA.length - 1}
         >
           <img
             src={ARROW_IMG_URL}

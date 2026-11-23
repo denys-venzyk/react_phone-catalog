@@ -47,7 +47,7 @@ export const HomePage = () => {
   return (
     <section className={style.container}>
       <h1 className={'visually-hidden'}>Product Catalog</h1>
-      <h1 className={style.title}>Welcome to Nice Gadgets store!</h1>
+      <h2 className={style.title}>Welcome to Nice Gadgets store!</h2>
 
       <PicturesSlider />
 

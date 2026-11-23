@@ -1,0 +1,23 @@
+.breadcrumbs {
+  display: flex;
+  gap: 8px;
+  padding-bottom: 40px;
+  align-items: center;
+
+  &__text {
+    font-size: $st-font-size;
+    font-weight: $st-font-weight;
+    letter-spacing: $st-letter-spacing;
+    line-height: 16px;
+    height: 16px;
+    color: $secondary-color;
+    display: block;
+    transform: translateY(1px);
+  }
+
+  &__img {
+    display: block;
+    width: 16px;
+    height: 16px;
+  }
+}
