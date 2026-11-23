@@ -1,0 +1,93 @@
+.slider {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+
+  &__main {
+    display: flex;
+    align-items: stretch;
+    gap: 16px;
+    width: 100%;
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    flex-shrink: 0;
+    border: 1px solid $icons-color;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+
+    &:disabled {
+      border-color: $elements-color;
+      cursor: not-allowed;
+      opacity: 0.5;
+    }
+
+    &:hover:not(:disabled) {
+      border-color: $primary-color;
+    }
+
+    &--prev .slider__icon {
+      transform: rotate(-90deg);
+    }
+
+    &--next .slider__icon {
+      transform: rotate(90deg);
+    }
+  }
+
+  &__viewport {
+    flex: 1;
+    overflow: hidden;
+  }
+
+  &__track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+
+  &__banner {
+    display: block;
+    flex: 0 0 100%;
+    width: 100%;
+    background-color: $primary-color;
+  }
+
+  &__img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__dots {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__dot {
+    width: 14px;
+    height: 4px;
+    background-color: $elements-color;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: $primary-color;
+    }
+
+    &--active {
+      background-color: $primary-color;
+    }
+  }
+}
+
+.container {
+  display: flex;
+  gap: 14px;
+  padding: 14px 0;
+}

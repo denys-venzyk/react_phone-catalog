@@ -1,1 +1,9 @@
-export const NotFoundPage = () => <h1>Page not found</h1>;
+export const NotFoundPage = () => (
+  <div>
+    <img
+      src="/img/page-not-found.png"
+      alt="Page Not Found"
+      aria-label="Page Not Found"
+    />
+  </div>
+);

@@ -17,7 +17,11 @@ const VISIBLE_CARDS = 4;
 export const ProductSlider: React.FC<Props> = ({ title, products }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const maxIndex = Math.max(0, products.length - VISIBLE_CARDS);
+  function getMaxIndex(visibleCards: number) {
+    return Math.max(0, products.length - visibleCards);
+  }
+
+  const maxIndex = getMaxIndex(VISIBLE_CARDS);
   const offset = currentIndex * STEP;
 
   function handlePrev() {

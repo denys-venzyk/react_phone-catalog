@@ -4,6 +4,8 @@ import { getProducts } from '../../utils/api';
 import { ProductSlider } from '../../components/ProductSlider';
 import style from './HomePage.module.scss';
 import { ShopByCategory } from '../../components/ShopByCategory';
+import { Loader } from '../../components/Loader';
+import { PicturesSlider } from '../../components/PicturesSlider';
 
 export const HomePage = () => {
   const [products, setProducts] = useState<Product[]>([]);
@@ -45,6 +47,12 @@ export const HomePage = () => {
   return (
     <section className={style.container}>
       <h1 className={'visually-hidden'}>Product Catalog</h1>
+      <h1 className={style.title}>Welcome to Nice Gadgets store!</h1>
+
+      <PicturesSlider />
+
+      {isLoading && <Loader />}
+
       {!isLoading && !hasError && (
         <ProductSlider
           title={BRAND_NEW_MODELS_TITLE}
@@ -52,6 +60,9 @@ export const HomePage = () => {
         />
       )}
       <ShopByCategory products={products} />
+
+      {isLoading && <Loader />}
+
       {!isLoading && !hasError && (
         <ProductSlider title={HOT_PRICES_TITLE} products={hotPricesProducts} />
       )}
