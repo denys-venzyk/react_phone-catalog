@@ -1,5 +1,6 @@
 .catalog {
   @include page-container;
+
   padding-top: 24px;
   padding-bottom: 80px;
 
@@ -24,5 +25,62 @@
     line-height: $bt-line-height;
     letter-spacing: $bt-letter-spacing;
     color: $secondary-color;
+  }
+
+  &__filters {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+
+  &__filter {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  &__label {
+    font-size: $st-font-size;
+    font-weight: $st-font-weight;
+    letter-spacing: $st-letter-spacing;
+    line-height: $st-line-height;
+    color: $secondary-color;
+  }
+
+  &__select {
+    box-sizing: border-box;
+    height: 40px;
+    padding: 0 36px 0 12px;
+    appearance: none;
+    background-color: $white-color;
+    background-image: url('/img/ArrowDown.png');
+    background-size: 16px;
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    border: 1px solid $icons-color;
+    font-size: $btn-font-size;
+    font-weight: $btn-font-weight;
+    letter-spacing: $btn-letter-spacing;
+    line-height: $btn-line-height;
+    color: $primary-color;
+    outline: none;
+    cursor: pointer;
+    transition: border-color 0.3s;
+
+    &:hover {
+      border-color: $primary-color;
+    }
+
+    &:focus {
+      border-color: $primary-color;
+    }
+
+    &--sort {
+      width: 176px;
+    }
+
+    &--items {
+      width: 128px;
+    }
   }
 }
