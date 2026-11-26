@@ -1,6 +1,7 @@
 import { Link, NavLink } from 'react-router-dom';
 import style from './Header.module.scss';
 import cn from 'classnames';
+import { useFavorites } from '../../context/FavoritesContext';
 
 const NAV_ITEMS = [
   { to: '/', label: 'HOME' },
@@ -15,6 +16,9 @@ export const Header = () => {
 
   const getIconLinkClass = ({ isActive }: { isActive: boolean }) =>
     cn(style.iconLink, { [style['iconLink--active']]: isActive });
+
+  const { favorites } = useFavorites();
+  const favoritesCount = favorites.length;
 
   return (
     <header className={style.header}>
@@ -44,11 +48,18 @@ export const Header = () => {
           className={getIconLinkClass}
           aria-label="Favorites"
         >
-          <img
-            src="/img/Favorites(Empty).png"
-            alt="Favorites"
-            className={style.iconLink__img}
-          />
+          <div className={style.iconLink__wrapper}>
+            <img
+              src="/img/Favorites(Empty).png"
+              alt="Favorites"
+              className={style.iconLink__img}
+            />
+            {favoritesCount > 0 && (
+              <span className={style.iconLink__badge}>
+                {favoritesCount > 99 ? '99+' : favoritesCount}
+              </span>
+            )}
+          </div>
         </NavLink>
         <NavLink to="/cart" className={getIconLinkClass} aria-label="Cart">
           <img

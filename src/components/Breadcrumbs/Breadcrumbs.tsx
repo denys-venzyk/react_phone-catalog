@@ -10,6 +10,7 @@ const BREADCRUMB_MAP: Record<Category, string> = {
   phones: 'Phones',
   tablets: 'Tablets',
   accessories: 'Accessories',
+  favorites: 'Favorites',
 };
 
 export const Breadcrumbs: React.FC<Props> = ({ type }) => {

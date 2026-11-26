@@ -18,6 +18,7 @@ const TITLE_MAP: Record<Category, string> = {
   phones: 'Mobile phones',
   tablets: 'Tablets',
   accessories: 'Accessories',
+  favorites: 'Favorites',
 };
 
 const SORT_MAP = [

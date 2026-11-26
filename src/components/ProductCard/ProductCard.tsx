@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Product } from '../../types/Product';
 import { ProductCardDesc } from '../../types/ProductCardDesc';
 import style from './ProductCard.module.scss';
+import { useFavorites } from '../../context/FavoritesContext';
 
 type Props = {
   product: Product;
@@ -10,6 +11,7 @@ type Props = {
 
 export const ProductCard: React.FC<Props> = ({ product }) => {
   const hasDiscount = product.fullPrice > product.price;
+  const { isFavorite, removeFromFavorites, addToFavorites } = useFavorites();
 
   return (
     <article className={style.card}>
@@ -60,9 +62,18 @@ export const ProductCard: React.FC<Props> = ({ product }) => {
           type="button"
           className={style.favoriteButton}
           aria-label="Add to favorites"
+          onClick={() =>
+            isFavorite(product.id)
+              ? removeFromFavorites(product.id)
+              : addToFavorites(product)
+          }
         >
           <img
-            src="/img/Favorites(Empty).png"
+            src={
+              isFavorite(product.id)
+                ? '/img/heart_like.png'
+                : '/img/Favorites(Empty).png'
+            }
             alt=""
             className={style.favoriteIcon}
           />

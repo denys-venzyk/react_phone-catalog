@@ -1,0 +1,29 @@
+.favorites {
+  @include page-container;
+
+  padding-bottom: 80px;
+  padding-top: 24px;
+
+  &__titles {
+    display: flex;
+    gap: 8px;
+    flex-direction: column;
+    padding-bottom: 40px;
+  }
+
+  &__title {
+    font-size: $h1-font-size;
+    font-weight: $h1-font-weight;
+    line-height: $h1-line-height;
+    letter-spacing: $h1-letter-spacing;
+    color: $primary-color;
+  }
+
+  &__items {
+    font-size: $bt-font-size;
+    font-weight: $bt-font-weight;
+    letter-spacing: $bt-letter-spacing;
+    line-height: $bt-line-height;
+    color: $secondary-color;
+  }
+}
