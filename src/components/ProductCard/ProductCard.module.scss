@@ -127,11 +127,6 @@
   cursor: pointer;
   transition: background-color 0.3s, box-shadow 0.3s;
 
-  &:hover:not(:disabled) {
-    background-color: #27282c;
-    box-shadow: 0 3px 13px 0 rgba(23, 32, 49, 0.26);
-  }
-
   &:disabled {
     border: 1px solid $elements-color;
     background-color: $white-color;
@@ -140,6 +135,11 @@
     line-height: 21px;
     letter-spacing: 0%;
     color: $green-color;
+  }
+
+  &:hover:not(:disabled) {
+    background-color: #27282c;
+    box-shadow: 0 3px 13px 0 rgba(23, 32, 49, 0.26);
   }
 }
 
