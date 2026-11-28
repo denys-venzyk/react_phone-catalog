@@ -4,6 +4,7 @@ import { Product } from '../../types/Product';
 import { ProductCardDesc } from '../../types/ProductCardDesc';
 import style from './ProductCard.module.scss';
 import { useFavorites } from '../../context/FavoritesContext';
+import { useCart } from '../../context/CartContext';
 
 type Props = {
   product: Product;
@@ -12,6 +13,7 @@ type Props = {
 export const ProductCard: React.FC<Props> = ({ product }) => {
   const hasDiscount = product.fullPrice > product.price;
   const { isFavorite, removeFromFavorites, addToFavorites } = useFavorites();
+  const { isInCart, addToCart, removeFromCart } = useCart();
 
   return (
     <article className={style.card}>
@@ -54,8 +56,17 @@ export const ProductCard: React.FC<Props> = ({ product }) => {
       </div>
 
       <div className={style.actions}>
-        <button type="button" className={style.addButton}>
-          Add to cart
+        <button
+          type="button"
+          className={style.addButton}
+          onClick={() =>
+            isInCart(product.id)
+              ? removeFromCart(product.id)
+              : addToCart(product)
+          }
+          disabled={isInCart(product.id)}
+        >
+          {isInCart(product.id) ? 'Added to cart' : 'Add to cart'}
         </button>
 
         <button
